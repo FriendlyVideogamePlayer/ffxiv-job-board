@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/postad', function () {
+    return view('postad');
+})->name('post');
+
+Route::get('/browseads', function () {
+    return view('browseads');
+})->name('browse');
