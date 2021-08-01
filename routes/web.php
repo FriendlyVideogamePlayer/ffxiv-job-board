@@ -21,6 +21,4 @@ Route::get('/postad', function () {
     return view('postad');
 })->name('post');
 
-Route::get('/browseads', function () {
-    return view('browseads');
-})->name('browse');
+Route::get('/browseads', 'App\Http\Controllers\AdController@index')->name('browse');
