@@ -7,9 +7,10 @@
                 @include('components.nav')
             </div> 
             <div class="container mx-auto bg-cover min-h-screen w-full flex justify-center items-center">
-                @include('components.filter')
+
+                
+
             <div>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
         </div>
 
 
