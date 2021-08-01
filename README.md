@@ -10,6 +10,12 @@ Move this project folder to your webserver/XAMPP web root (XAMPP/htdocs or /var/
 composer install
 ```
 
+Then to generate and seed the DB run 
+
+```
+php artisan migrate:fresh --seed
+```
+
 Next to get the frontend dependencies, including tailwind run
 
 ```
