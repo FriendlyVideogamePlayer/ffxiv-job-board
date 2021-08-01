@@ -9,10 +9,10 @@
     </div>
     <div id="navbarMobile" class="w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-            <a href="{{ route('browse') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white border p-1 border-transparent rounded-lg hover:border-white mr-4">
+            <a href="{{ route('browse') }}" class="{{ Request::is('browseads') ? 'border-white' : 'border-transparent' }} block mt-4 lg:inline-block lg:mt-0 text-white border p-1 rounded-lg hover:border-white hover:bg-white hover:bg-opacity-20 mr-4">
                 browse all ads
             </a>
-            <a href="{{ route('post') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white border p-1 border-transparent rounded-lg hover:border-white mr-4">
+            <a href="{{ route('post') }}" class="{{ Request::is('postad') ? 'border-white' : 'border-transparent' }} block mt-4 lg:inline-block lg:mt-0 text-white border p-1 rounded-lg hover:border-white hover:bg-white hover:bg-opacity-20 mr-4">
                 post an ad
             </a>
         </div>
