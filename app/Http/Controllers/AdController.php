@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\CreateAdRequest;
+use App\Http\Requests\SearchAdRequest;
 use Illuminate\Http\Request;
 use App\Models\Ads;
 use Illuminate\Support\Facades\DB;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class AdController extends Controller
 {
 
-    //Takes all of the ads from the DB and returns the browse view
+    // takes all of the ads from the DB and returns the browse view
     public function index() {
         $ads = DB::table('ads')->orderBy('ad_id', 'desc')->get();
         // Filter through the titles and add in role colours
@@ -21,11 +22,10 @@ class AdController extends Controller
         return view('browseads')->with('ads',$ads);
     }
 
-    public function store(CreateAdRequest $request) 
-    {
+    // stores a new record in the db
+    public function store(CreateAdRequest $request) {
         $validated = $request->validated();
 
-        
         $ad = new Ads;
         $ad->title = $request->input('title');
         $ad->description = $request->input('description');
@@ -34,6 +34,15 @@ class AdController extends Controller
 
         $ad->save();
         return view('/browseads')->with('postSuccess', 'your ad has been posted!');
+    }
+
+    // searches for ads matching the criteria and returns the browse view
+    public function search(SearchAdRequest $request) {
+        $validated = $request->validated();
+
+        $ads = DB::table('ads')->where('ad_type', $request->input('ad_type'))->get();
+
+        return view('browseads')->with('ads',$ads);
     }
 
 }

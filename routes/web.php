@@ -24,3 +24,5 @@ Route::get('/postad', function () {
 Route::get('/browseads', 'App\Http\Controllers\AdController@index')->name('browse');
 
 Route::post('/postad', 'App\Http\Controllers\AdController@store');
+
+Route::post('/browseads', 'App\Http\Controllers\AdController@search');
