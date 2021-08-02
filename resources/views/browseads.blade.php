@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     @include('components.head')
-    <body class="bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500">
+    <body class="bg-gradient-to-r from-indigo-700 to-pink-700">
         <div class="w-full min-h-screen bg-white bg-opacity-20 backdrop-filter backdrop-blur-md">
             <div class="border-b-2 border-white w-full"> 
                 @include('components.nav')
@@ -12,7 +12,7 @@
                 <div class="px-8 bg-cover min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
                     @foreach($ads as $ad)
                         <div class="">
-                            <div class="px-1 flex flex-row space-y-2 justify-center h-full py-3 bg-black bg-opacity-30 rounded-lg space-x-3">
+                            <div class="px-1 flex flex-row space-y-2 justify-center h-full max-h-72 py-3 bg-black bg-opacity-30 rounded-lg space-x-3">
                                 <div class="flex flex-col space-y-2 w-auto justify-center items-center">
                                     <img class="rounded-lg" src="{{url('/images/exRaidIcon.png')}}" />
                                     <div class="opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-3/4">
