@@ -21,4 +21,6 @@ class AdController extends Controller
         return view('browseads')->with('ads',$ads);
     }
 
+
+
 }
