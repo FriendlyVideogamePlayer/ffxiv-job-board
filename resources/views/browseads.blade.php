@@ -9,9 +9,9 @@
             @include('components.filter')
 
             @if(count($ads) > 0)
-                <div class="px-8 bg-cover min-h-screen w-full grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-center items-center">
+                <div class="px-8 bg-cover min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
                     @foreach($ads as $ad)
-                        <div class="mx-auto">
+                        <div class="">
                             <div class="px-1 flex flex-row space-y-2 justify-center h-full py-3 bg-black bg-opacity-30 rounded-lg space-x-3">
                                 <div class="flex flex-col space-y-2 w-auto justify-center items-center">
                                     <img class="rounded-lg" src="{{url('/images/exRaidIcon.png')}}" />
@@ -22,7 +22,7 @@
                                 <div class="w-3/4">
                                     <p class="w-full text-xl font-semibold text-white">{!! $ad->title !!}</p>
                                     <p class="w-full text-sm tracking-wide leading-tight text-white">{{$ad->description}}</p>
-                                    <div class="flex flex-row align-middle items-center mt-2 gap-1">
+                                    <div class="flex flex-row items-center mt-2 gap-1 align-bottom">
                                         <p class="text-sm font-medium text-white leading-normal">tags:</p>
                                         <div class="opacity-95 border rounded border-green-400 hover:bg-white hover:bg-opacity-20 w-auto px-1">
                                             <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-green-400">healer</p>
