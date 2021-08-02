@@ -7,16 +7,16 @@
                 @include('components.nav')
             </div> 
             <div class="container mx-auto bg-cover min-h-screen w-full flex justify-center items-center">
-                <form class="flex flex-col gap-y-2 justify-center items-center bg-black bg-opacity-30 rounded-lg w-2/4 h-96 text-white" action="" method="post" action="">
+                <form class="flex flex-col gap-y-2 justify-center items-center bg-black bg-opacity-30 rounded-lg w-2/4 h-96 text-white" method="post" action="">
                     @csrf
                     <div class="flex flex-row gap-x-3">
                         <label>title: </label>
                         <div class="opacity-95 border rounded border-white flex items-center w-40">
-                            <input type="text" name="titleInput" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-40">
+                            <input type="text" name="title" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-40">
                         </div>
-                        @if ($errors->has('titleInput'))
+                        @if ($errors->has('title'))
                         <div class="text-red-400">
-                            {{ $errors->first('titleInput') }}
+                            {{ $errors->first('title') }}
                         </div>
                         @endif
                     </div>
@@ -24,11 +24,11 @@
                     <div class="flex flex-row gap-x-3">
                         <label>description: </label>
                         <div class="opacity-95 border rounded border-white flex items-center w-40">
-                            <input type="text" name="descriptionInput" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-40">
+                            <input type="text" name="description" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-40">
                         </div>
-                        @if ($errors->has('descriptionInput'))
+                        @if ($errors->has('description'))
                         <div class="text-red-400">
-                            {{ $errors->first('descriptionInput') }}
+                            {{ $errors->first('description') }}
                         </div>
                         @endif
                     </div>
@@ -36,11 +36,11 @@
                     <div class="flex flex-row gap-x-3">
                         <label>discord username: </label>
                         <div class="opacity-95 border rounded border-white flex items-center w-40">
-                            <input type="text" name="usernameInput" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-40">
+                            <input type="text" name="discord_contact" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-40">
                         </div>
-                        @if ($errors->has('usernameInput'))
+                        @if ($errors->has('discord_contact'))
                         <div class="text-red-400">
-                            {{ $errors->first('usernameInput') }}
+                            {{ $errors->first('discord_contact') }}
                         </div>
                         @endif
                     </div>
@@ -48,14 +48,14 @@
                     <div class="flex flex-row gap-x-3">
                         <label>ad type: </label>
                         <div class="opacity-95 border rounded border-white flex items-center w-40">
-                            <select name="typeInput" class="bg-transparent cursor-pointer inset-0 text-sm font-medium leading-normal text-center text-white w-40">
+                            <select name="ad_type" class="bg-transparent cursor-pointer inset-0 text-sm font-medium leading-normal text-center text-white w-40">
                                 <option value="static">static</option>
                                 <option value="fc">fc</option>
                             </select>
                         </div>
-                        @if ($errors->has('typeInput'))
+                        @if ($errors->has('ad_type'))
                         <div class="text-red-400">
-                            {{ $errors->first('typeInput') }}
+                            {{ $errors->first('ad_type') }}
                         </div>
                         @endif
                     </div>

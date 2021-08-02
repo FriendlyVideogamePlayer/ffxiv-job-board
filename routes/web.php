@@ -22,3 +22,5 @@ Route::get('/postad', function () {
 })->name('post');
 
 Route::get('/browseads', 'App\Http\Controllers\AdController@index')->name('browse');
+
+Route::post('/postad', 'App\Http\Controllers\AdController@store');

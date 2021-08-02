@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\CreateAdRequest;
 use Illuminate\Http\Request;
 use App\Models\Ads;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +21,11 @@ class AdController extends Controller
         return view('browseads')->with('ads',$ads);
     }
 
+    public function store(CreateAdRequest $request) 
+    {
+        $validated = $request->validated();
 
+        return view('browseads');
+    }
 
 }
