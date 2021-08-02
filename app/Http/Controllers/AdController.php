@@ -25,7 +25,15 @@ class AdController extends Controller
     {
         $validated = $request->validated();
 
-        return view('browseads');
+        
+        $ad = new Ads;
+        $ad->title = $request->input('title');
+        $ad->description = $request->input('description');
+        $ad->discord_contact = $request->input('discord_contact');
+        $ad->ad_type = $request->input('ad_type');
+
+        $ad->save();
+        return view('/browseads')->with('postSuccess', 'your ad has been posted!');
     }
 
 }

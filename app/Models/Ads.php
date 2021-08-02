@@ -22,4 +22,6 @@ class Ads extends Model
         'ad_type',
         'ad_posted',
     ];
+
+    public $timestamps = false;
 }
