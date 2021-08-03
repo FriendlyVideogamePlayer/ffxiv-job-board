@@ -19,6 +19,7 @@ class CreateAdsTable extends Migration
             $table->string('description',320);
             $table->string('discord_contact',50);
             $table->string('ad_type');
+            $table->string('ad_tags');
             $table->timestamp('ad_posted')->useCurrent();
         });
     }

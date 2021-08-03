@@ -21,6 +21,7 @@ class Ads extends Model
         'discord_contact',
         'ad_type',
         'ad_posted',
+        'ad_tags',
     ];
 
     public $timestamps = false;

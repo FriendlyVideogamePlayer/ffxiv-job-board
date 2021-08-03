@@ -25,12 +25,12 @@ class AdController extends Controller
     // stores a new record in the db
     public function store(CreateAdRequest $request) {
         $validated = $request->validated();
-
         $ad = new Ads;
         $ad->title = $request->input('title');
         $ad->description = $request->input('description');
         $ad->discord_contact = $request->input('discord_contact');
         $ad->ad_type = $request->input('ad_type');
+        $ad->ad_tags = json_encode($request->input('tags'));
 
         $ad->save();
         return view('/browseads')->with('postSuccess', 'your ad has been posted!');
