@@ -24,18 +24,13 @@
                                     <p class="w-full text-sm tracking-wide leading-tight text-white">{{$ad->description}}</p>
                                     <div class="flex flex-row items-center mt-2 gap-1 align-bottom">
                                         <p class="text-sm font-medium text-white leading-normal">tags:</p>
-                                        <div class="opacity-95 border rounded border-green-400 hover:bg-white hover:bg-opacity-20 w-auto px-1">
-                                            <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-green-400">healer</p>
+                                        
+                                        @foreach($ad->ad_tags as $tag)
+                                        <div class="opacity-95 border rounded @if($tag === 'healer') border-green-400 text-green-400 @elseif($tag === 'tank') border-blue-400 text-blue-400 @elseif($tag === 'dps') border-red-400 text-red-400 @else border-white text-white @endif hover:bg-white hover:bg-opacity-20 w-auto px-1">
+                                            <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center">{{$tag}}</p>
                                         </div>
-                                        <div class="opacity-95 border rounded border-blue-400 hover:bg-white hover:bg-opacity-20 w-auto px-1">
-                                            <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-blue-400">tank</p>
-                                        </div>
-                                        <div class="opacity-95 border rounded border-red-400 hover:bg-white hover:bg-opacity-20 w-auto px-1">
-                                            <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-red-400">dps</p>
-                                        </div>
-                                        <div class="opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-auto px-1">
-                                            <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-white">static</p>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                                 
