@@ -3,7 +3,7 @@
     @include('components.head')
     <body class="bg-gradient-to-r from-indigo-700 to-pink-700">
         <div class="w-full min-h-screen bg-white bg-opacity-20 backdrop-filter backdrop-blur-md">
-            <div class="border-b-2 border-white w-full"> 
+            <div class="border-b border-white w-full"> 
                 @include('components.nav')
             </div> 
             @include('components.filter')

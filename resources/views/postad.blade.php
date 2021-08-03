@@ -9,6 +9,7 @@
             <div class="container mx-auto bg-cover min-h-screen w-full flex justify-center items-center">
                 <form class="flex flex-col gap-y-2 justify-center items-center bg-black bg-opacity-30 rounded-lg w-5/6 sm:w-3/4 md:w-3/5 lg:w-2/4 h-96 text-white" method="post" action="">
                     @csrf
+                    <h1 class="text-2xl text-white pb-2" role="heading" aria-level="1">post an ad</h1>
                     <div class="flex flex-row">
                         <div class="opacity-95 border rounded border-white flex items-center w-56">
                             <input type="text" name="title" placeholder="ad title" class="bg-transparent cursor-text inset-0 text-sm font-medium leading-normal text-center text-white w-56">
@@ -56,6 +57,23 @@
                         @endif
                     </div>
 
+                    <div class="flex flex-row gap-x-2 w-56 justify-center">
+                        <div class="flex opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 items-center text-white">
+                            <p class="w-full text-center text-sm">healer</p>
+                            <input type="checkbox" id="healer" name="healer" value="healer" class="absolute opacity-0 w-14 h-6 cursor-pointer" onclick="checkboxHighlight('healer')">
+                        </div>
+
+                        <div class="flex opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 items-center text-white">
+                            <p class="w-full text-center text-sm">tank</p>
+                            <input type="checkbox" id="tank" name="tank" value="tank" class="absolute opacity-0 w-14 h-6 cursor-pointer" onclick="checkboxHighlight('tank')">
+                        </div>
+
+                        <div class="flex opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 items-center text-white">
+                            <p class="w-full text-center text-sm">dps</p>
+                            <input type="checkbox" id="dps" name="dps" value="dps" class="absolute opacity-0 w-14 h-6 cursor-pointer" onclick="checkboxHighlight('dps')">
+                        </div>
+                    </div>
+
                     <div class="mt-6 opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 flex items-center">
                         <input type="submit" name="send" value="submit" class="bg-transparent cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-white">
                     </div>
@@ -72,6 +90,15 @@
                     nav.className = "w-full block flex-grow lg:flex lg:items-center lg:w-auto";
                 } else {
                     nav.className = "w-full hidden flex-grow lg:flex lg:items-center lg:w-auto";
+                }
+            }
+
+            function checkboxHighlight(checkbox) {
+                var checkboxDiv = document.getElementById(checkbox).parentElement;
+                if (checkboxDiv.className === "flex opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 items-center text-white") {
+                    checkboxDiv.className = "flex opacity-95 border rounded border-green-400 hover:bg-white hover:bg-opacity-20 w-14 items-center text-green-400";
+                } else {
+                    checkboxDiv.className = "flex opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 items-center text-white";
                 }
             }
         </script>

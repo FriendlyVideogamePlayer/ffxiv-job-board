@@ -1,5 +1,5 @@
 <div class="pb-4 flex justify-center items-center content-center">
-    <div class="py-4 w-5/6 border-b-2 border-white ">
+    <div class="py-4 w-5/6 border-b border-white ">
 
         <form class="" method="post" action="">
             @csrf
