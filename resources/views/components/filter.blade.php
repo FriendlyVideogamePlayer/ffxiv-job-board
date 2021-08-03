@@ -4,6 +4,7 @@
         <form class="" method="post" action="">
             @csrf
             <div class="flex flex-row gap-x-2 justify-center items-center content-center">
+                @include('components.tags')
                 <div class="opacity-95 border rounded border-white flex items-center">
                     <select name="ad_type" class="bg-transparent cursor-pointer inset-0 text-sm font-medium leading-normal text-center text-white">
                         <option value="all">all recruitments</option>

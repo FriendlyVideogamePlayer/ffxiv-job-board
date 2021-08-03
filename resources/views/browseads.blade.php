@@ -40,15 +40,6 @@
                 </div>
             @endif
         </div>
-        <script type="text/javascript">
-            function navbarMobile() {
-                var nav = document.getElementById("navbarMobile");
-                if (nav.className === "w-full hidden flex-grow lg:flex lg:items-center lg:w-auto") {
-                    nav.className = "w-full block flex-grow lg:flex lg:items-center lg:w-auto";
-                } else {
-                    nav.className = "w-full hidden flex-grow lg:flex lg:items-center lg:w-auto";
-                }
-            }
-        </script>
+
     </body>
 </html>
