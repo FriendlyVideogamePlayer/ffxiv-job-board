@@ -26,12 +26,16 @@ class AdController extends Controller
     // stores a new record in the db
     public function store(CreateAdRequest $request) {
         $validated = $request->validated();
+
+        $ad_tags = $request->input('tags');
+        array_push($ad_tags, $request->input('ad_type'));
+
         $ad = new Ads;
         $ad->title = $request->input('title');
         $ad->description = $request->input('description');
         $ad->discord_contact = $request->input('discord_contact');
         $ad->ad_type = $request->input('ad_type');
-        $ad->ad_tags = json_encode($request->input('tags'));
+        $ad->ad_tags = json_encode($ad_tags);
 
         $ad->save();
         return view('/browseads')->with('postSuccess', 'your ad has been posted!');
@@ -59,7 +63,7 @@ class AdController extends Controller
                 $ad->title = str_replace('dps', '<span class="text-red-400">dps</span>', $ad->title);
                 $ad->ad_tags = json_decode($ad->ad_tags);
             }
-            
+
             return view('browseads')->with('ads',$ads);
 
         } else {

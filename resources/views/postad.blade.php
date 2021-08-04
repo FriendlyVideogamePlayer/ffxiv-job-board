@@ -46,8 +46,8 @@
                     <div class="flex flex-row">
                         <div class="opacity-95 border rounded border-white flex items-center w-56">
                             <select name="ad_type" class="bg-transparent cursor-pointer inset-0 text-sm font-medium leading-normal text-center text-white w-56">
-                                <option value="static_rec">static recruitment</option>
-                                <option value="fc_rec">fc recruitment</option>
+                                <option value="static">static recruitment</option>
+                                <option value="fc">fc recruitment</option>
                             </select>
                         </div>
                         @if ($errors->has('ad_type'))

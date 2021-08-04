@@ -7,8 +7,8 @@
                 @include('components.tags')
                 <div class="opacity-95 border rounded border-white flex items-center">
                     <select name="ad_type" class="bg-transparent cursor-pointer inset-0 text-sm font-medium leading-normal text-center text-white">
-                        <option value="static_rec">static recruitment</option>
-                        <option value="fc_rec">fc recruitment</option>
+                        <option value="static">static recruitment</option>
+                        <option value="fc">fc recruitment</option>
                     </select>
                 </div>
 
