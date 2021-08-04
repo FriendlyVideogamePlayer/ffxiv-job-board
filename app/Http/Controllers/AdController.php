@@ -41,16 +41,39 @@ class AdController extends Controller
     public function search(SearchAdRequest $request) {
         $validated = $request->validated();
 
-        $ads = DB::table('ads')->where('ad_type', $request->input('ad_type'))->get();
+        if($request->input('tags')) {
+            $tags = $request->input('tags');
 
-        foreach($ads as $ad) {
-            $ad->title = str_replace('healer', '<span class="text-green-400">healer</span>', $ad->title);
-            $ad->title = str_replace('tank', '<span class="text-blue-400">tank</span>', $ad->title);
-            $ad->title = str_replace('dps', '<span class="text-red-400">dps</span>', $ad->title);
-            $ad->ad_tags = json_decode($ad->ad_tags);
+            $ads = DB::table('ads')
+                        ->where('ad_type', $request->input('ad_type'))
+                        ->where(function ($query) use($tags) {
+                            foreach($tags as $tag) {
+                                $query->where('ad_tags', 'like', '%'.$tag.'%');
+                            }
+                        })
+                        ->get();
+
+            foreach($ads as $ad) {
+                $ad->title = str_replace('healer', '<span class="text-green-400">healer</span>', $ad->title);
+                $ad->title = str_replace('tank', '<span class="text-blue-400">tank</span>', $ad->title);
+                $ad->title = str_replace('dps', '<span class="text-red-400">dps</span>', $ad->title);
+                $ad->ad_tags = json_decode($ad->ad_tags);
+            }
+            
+            return view('browseads')->with('ads',$ads);
+
+        } else {
+            $ads = DB::table('ads')->where('ad_type', $request->input('ad_type'))->get();
+            foreach($ads as $ad) {
+                $ad->title = str_replace('healer', '<span class="text-green-400">healer</span>', $ad->title);
+                $ad->title = str_replace('tank', '<span class="text-blue-400">tank</span>', $ad->title);
+                $ad->title = str_replace('dps', '<span class="text-red-400">dps</span>', $ad->title);
+                $ad->ad_tags = json_decode($ad->ad_tags);
+            }
+            return view('browseads')->with('ads',$ads);
         }
+
         
-        return view('browseads')->with('ads',$ads);
     }
 
 }
