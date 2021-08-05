@@ -38,7 +38,7 @@ class AdController extends Controller
         $ad->ad_tags = json_encode($ad_tags);
 
         $ad->save();
-        return view('/browseads')->with('postSuccess', 'your ad has been posted!');
+        return view('/postad')->with('postSuccess', 'your ad has been posted!');
     }
 
     // searches for ads matching the criteria and returns the browse view

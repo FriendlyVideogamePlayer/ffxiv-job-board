@@ -15,3 +15,12 @@ window.checkboxHighlight = function checkboxHighlight(checkbox) {
         checkboxDiv.className = "flex opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 items-center text-white";
     }
 }
+
+window.toggleDark = function toggleDark() {
+    var html = document.documentElement;
+    if (html.className === "") {
+        html.className = "dark";
+    } else {
+        html.className = "";
+    }
+}

@@ -16,5 +16,11 @@
                 post an ad
             </a>
         </div>
+        
+        <div class="flex text-sm lg:flex-grow lg:justify-end">
+            <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white border p-1 rounded-lg hover:border-white hover:bg-white hover:bg-opacity-20 mr-4" onclick="toggleDark()">
+                Toggle dark
+            </a>
+        </div>
     </div>
 </nav>
