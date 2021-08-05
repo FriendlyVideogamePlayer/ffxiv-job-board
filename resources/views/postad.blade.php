@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="">
     @include('components.head')
-    <body class="bg-gradient-to-r from-indigo-700 to-pink-700">
+    <body class="bg-gradient-to-r from-indigo-700 to-pink-700 dark:from-black dark:to-black" onload="checkDark()">
         <div class="w-full min-h-screen bg-white bg-opacity-20 backdrop-filter backdrop-blur-md">
             <div class="border-b-2 border-white w-full"> 
                 @include('components.nav')

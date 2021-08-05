@@ -17,10 +17,21 @@ window.checkboxHighlight = function checkboxHighlight(checkbox) {
 }
 
 window.toggleDark = function toggleDark() {
+    var dark = localStorage.getItem("dark");
     var html = document.documentElement;
-    if (html.className === "") {
-        html.className = "dark";
-    } else {
+    if (dark === "dark") {
         html.className = "";
+        localStorage.setItem("dark", "");
+    } else {
+        html.className = "dark";
+        localStorage.setItem("dark", "dark");
+    }
+}
+
+window.checkDark = function checkDark() {
+    var dark = localStorage.getItem("dark");
+    var html = document.documentElement;
+    if (dark === "dark") {
+        html.className = "dark";
     }
 }
