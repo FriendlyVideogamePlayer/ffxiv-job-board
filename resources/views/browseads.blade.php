@@ -12,7 +12,7 @@
                 <div class="px-8 bg-cover min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
                     @foreach($ads as $ad)
                         <div class="">
-                            <div class="px-1 flex flex-row space-y-2 justify-center h-full max-h-72 py-3 bg-black dark:bg-transparent dark:border-white border border-transparent bg-opacity-30 rounded-lg space-x-3">
+                            <div class="px-1 flex flex-row space-y-2 justify-center h-full max-h-72 py-3 bg-black dark:bg-opacity-50 bg-opacity-30 rounded-lg space-x-3">
                                 <div class="flex flex-col space-y-2 w-auto justify-center items-center">
                                     <img class="rounded-lg" src="{{url('/images/exRaidIcon.png')}}" />
                                     <div class="opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-3/4">

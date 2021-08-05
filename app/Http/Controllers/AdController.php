@@ -55,6 +55,7 @@ class AdController extends Controller
                                 $query->where('ad_tags', 'like', '%'.$tag.'%');
                             }
                         })
+                        ->orderBy('ad_id', 'desc')
                         ->get();
 
             foreach($ads as $ad) {
@@ -67,7 +68,7 @@ class AdController extends Controller
             return view('browseads')->with('ads',$ads);
 
         } else {
-            $ads = DB::table('ads')->where('ad_type', $request->input('ad_type'))->get();
+            $ads = DB::table('ads')->where('ad_type', $request->input('ad_type'))->orderBy('ad_id', 'desc')->get();
             foreach($ads as $ad) {
                 $ad->title = str_replace('healer', '<span class="text-green-400">healer</span>', $ad->title);
                 $ad->title = str_replace('tank', '<span class="text-blue-400">tank</span>', $ad->title);
