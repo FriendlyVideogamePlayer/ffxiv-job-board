@@ -64,7 +64,12 @@
                     <div class="mt-6 opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-14 flex items-center">
                         <input type="submit" name="send" value="submit" class="bg-transparent cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-white">
                     </div>
-
+                    
+                    @isset($postSuccess)
+                        <div class="my-6 opacity-95 border rounded border-green-400 text-green-400 w-auto px-1">
+                            <p class="m-auto inset-0 text-sm font-medium leading-normal text-center">{{ $postSuccess }}</p>
+                        </div>
+                    @endisset
                     
                 </form>
             <div>

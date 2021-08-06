@@ -9,20 +9,20 @@
             @include('components.filter')
 
             @if(count($ads) > 0)
-                <div class="px-8 bg-cover min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
+                <div class="px-8 bg-cover w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
                     @foreach($ads as $ad)
                         <div class="">
-                            <div class="px-1 flex flex-row space-y-2 justify-center h-full max-h-72 py-3 bg-black dark:bg-opacity-50 bg-opacity-30 rounded-lg space-x-3">
+                            <div class="px-1 flex flex-row space-y-2 justify-center h-full max-h-80 lg:max-h-72 py-3 bg-black dark:bg-opacity-50 bg-opacity-30 rounded-lg space-x-3">
                                 <div class="flex flex-col space-y-2 w-auto justify-center items-center">
                                     <img class="rounded-lg" src="{{url('/images/exRaidIcon.png')}}" />
                                     <div class="opacity-95 border rounded border-white hover:bg-white hover:bg-opacity-20 w-3/4">
                                         <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center text-white">contact</p>
                                     </div>
                                 </div>
-                                <div class="w-3/4">
+                                <div class="flex flex-col justify-between w-3/4">
                                     <p class="w-full text-xl font-semibold text-white">{!! $ad->title !!}</p>
                                     <p class="w-full text-sm tracking-wide leading-tight text-white">{{$ad->description}}</p>
-                                    <div class="flex flex-row items-center mt-2 gap-1 align-bottom">
+                                    <div class="flex flex-row items-end mt-auto pt-3 gap-1 align-bottom justify-self-end">
                                         <p class="text-sm font-medium text-white leading-normal">tags:</p>
                                         
                                         @foreach($ad->ad_tags as $tag)
