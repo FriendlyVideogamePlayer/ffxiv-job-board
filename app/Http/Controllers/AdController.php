@@ -15,9 +15,10 @@ class AdController extends Controller
         $ads = DB::table('ads')->orderBy('ad_id', 'desc')->get();
         // Filter through the titles and add in role colours
         foreach($ads as $ad) {
-            $ad->title = str_replace('healer', '<span class="text-green-400">healer</span>', $ad->title);
-            $ad->title = str_replace('tank', '<span class="text-blue-400">tank</span>', $ad->title);
-            $ad->title = str_replace('dps', '<span class="text-red-400">dps</span>', $ad->title);
+            $ad->title = str_replace(
+                ['healer', 'tank', 'dps'],
+                ['<span class="text-green-400">healer</span>', '<span class="text-blue-400">tank</span>', '<span class="text-red-400">dps</span>']
+                , $ad->title);
             $ad->ad_tags = json_decode($ad->ad_tags);
         }
         return view('browseads')->with('ads',$ads);
