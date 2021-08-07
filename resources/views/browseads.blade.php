@@ -30,8 +30,8 @@
                                             <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center">{{$tag}}</p>
                                         </div>
                                         @endforeach
-
                                     </div>
+                                    <p class="w-full text-sm tracking-wide leading-tight text-white pt-1">Posted on: {{$ad->ad_posted}}</p>
                                 </div>
                                 
                             </div>
