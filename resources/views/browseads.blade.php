@@ -26,7 +26,7 @@
                                         <p class="text-sm font-medium text-white leading-normal">tags:</p>
                                         
                                         @foreach($ad->ad_tags as $tag)
-                                        <div class="opacity-95 border rounded @if($tag === 'healer') border-green-400 text-green-400 @elseif($tag === 'tank') border-blue-400 text-blue-400 @elseif($tag === 'dps') border-red-400 text-red-400 @else border-white text-white @endif hover:bg-white hover:bg-opacity-20 w-auto px-1">
+                                        <div class="opacity-95 border rounded @if($tag === 'healer') border-green-400 text-green-400 @elseif($tag === 'tank') border-blue-400 text-blue-400 @elseif($tag === 'dps') border-red-400 text-red-400 @elseif($tag === 'casual' || $tag === 'midcore' || $tag === 'hardcore') border-yellow-400 text-yellow-400 @else border-white text-white @endif hover:bg-white hover:bg-opacity-20 w-auto px-1">
                                             <p class="cursor-pointer m-auto inset-0 text-sm font-medium leading-normal text-center">{{$tag}}</p>
                                         </div>
                                         @endforeach

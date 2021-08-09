@@ -28,7 +28,7 @@ class SearchAdRequest extends FormRequest
             'description' => 'max:320',
             'discord_contact' => 'max:50',
             'ad_type' => 'in:static,fc',
-            'ad_tags' => 'in:healer,tank,dps,static,fccasual,midcore,hardcore',
+            'ad_tags' => 'in:healer,tank,dps,static,fc,casual,midcore,hardcore',
         ];
     }
 }

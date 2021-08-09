@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\CreateAdRequest;
 use App\Http\Requests\SearchAdRequest;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\Ads;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +12,7 @@ class AdController extends Controller
 {
 
     // takes all of the ads from the DB and returns the browse view
-    public function index() {
+    public function index(): View {
         $ads = DB::table('ads')->orderBy('ad_id', 'desc')->get();
         // Filter through the titles and add in role colours
         foreach($ads as $ad) {
@@ -25,7 +26,7 @@ class AdController extends Controller
     }
 
     // stores a new record in the db
-    public function store(CreateAdRequest $request) {
+    public function store(CreateAdRequest $request): View {
         $validated = $request->validated();
 
         $ad_tags = $request->input('tags');
@@ -43,7 +44,7 @@ class AdController extends Controller
     }
 
     // searches for ads matching the criteria and returns the browse view
-    public function search(SearchAdRequest $request) {
+    public function search(SearchAdRequest $request): View {
         $validated = $request->validated();
 
         if($request->input('tags')) {
