@@ -36,6 +36,7 @@ class AdController extends Controller
         $ad->title = $request->input('title');
         $ad->description = $request->input('description');
         $ad->discord_contact = $request->input('discord_contact');
+        $ad->current_classes = $request->input('current_classes');
         $ad->ad_type = $request->input('ad_type');
         $ad->ad_tags = json_encode($ad_tags);
 

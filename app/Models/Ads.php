@@ -19,6 +19,7 @@ class Ads extends Model
         'title',
         'description',
         'discord_contact',
+        'current_classes',
         'ad_type',
         'ad_posted',
         'ad_tags',

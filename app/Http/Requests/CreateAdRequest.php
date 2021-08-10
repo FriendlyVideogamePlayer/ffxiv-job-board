@@ -27,6 +27,7 @@ class CreateAdRequest extends FormRequest
             'title' => 'required|max:50',
             'description' => 'required|max:320',
             'discord_contact' => 'required|max:50',
+            'current_classes' => 'max:70',
             'ad_type' => 'required|in:static,fc',
             'ad_tags' => 'in:healer,tank,dps,static,fc,casual,midcore,hardcore'
         ];
